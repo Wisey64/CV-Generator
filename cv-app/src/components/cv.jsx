@@ -47,4 +47,4 @@ function Cv(){
     
 }
 
-export default Education
+export default Cv

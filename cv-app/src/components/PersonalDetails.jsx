@@ -13,6 +13,7 @@ function PersonalDetails(){
         <input type="telephone" />
         <p>Address</p>
         <input type="text" />
+        <button>Save</button>
     </form>
     </>)
     

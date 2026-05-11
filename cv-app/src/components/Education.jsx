@@ -16,6 +16,7 @@ function Education(){
         <input type="date" />
         <p>School Location</p>
         <input type="text" />
+        <button>Save</button>
     </form>
     </>)
     

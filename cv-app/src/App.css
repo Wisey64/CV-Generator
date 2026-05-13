@@ -1,0 +1,4 @@
+.appcontainer{
+    display: flex;
+    gap: 200px;
+}

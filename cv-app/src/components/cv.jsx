@@ -2,16 +2,16 @@ import React from "react";
 import { useState } from "react";
 
 
-function Cv(){
+function Cv({data}){
     return (<>
     <div>
         <div>
             <div>
-                <h1>name</h1>
+                <h1>{data.name}</h1>
             </div>
-            <p>email</p>
-            <p>phone</p>
-            <p>Location</p>
+            <p>{data.email}</p>
+            <p>{data.phone}</p>
+            <p>{data.address}</p>
         </div>
         <div>
             <div>

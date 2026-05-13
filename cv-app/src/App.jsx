@@ -7,7 +7,10 @@ import Cv from './components/cv'
 
 function App() {
 
-  const [data,setData]=useState({name:"",email:"",phone:[],address:""  })
+  const [data,setData]=useState({name:"",email:"",phone:[],address:"",schoolname:"",
+    degree:"", schoolstartdate:"",schoolenddate:"",schooladdress:"",companyname:""
+    , position:"",companystartdate:"",companyenddate:"",companyaddress:"",description:""
+    })
 
   function handleChange(event){
    let value=event.target.value
@@ -23,8 +26,10 @@ function App() {
       data={data}
       handleChange={handleChange}
           />
-    <Education></Education>
-    <Experience></Experience>
+    <Education data={data}
+      handleChange={handleChange}></Education>
+    <Experience data={data}
+      handleChange={handleChange}></Experience>
     </div>
     <div className="rightcontainer">
       <Cv data={data}></Cv>

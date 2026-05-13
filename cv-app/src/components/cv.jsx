@@ -18,12 +18,12 @@ function Cv({data}){
                 <h2>Education</h2>
                 <div>
                     <div>
-                        <p>date</p>
-                        <p>city</p>
+                        <p>from  {data.schoolstartdate}  to  {data.schoolenddate}</p>
+                        <p>{data.schooladdress}</p>
                     </div>
                     <div>
-                        <p>school name</p>
-                        <p>degrree</p>
+                        <p>{data.schoolname}</p>
+                        <p>{data.degree}</p>
                     </div>
                 </div>
             </div>
@@ -31,12 +31,14 @@ function Cv({data}){
                 <h2>Experience</h2>
                 <div>
                     <div>
-                        <p>date</p>
-                        <p>city</p>
+                        <p>from  {data.companystartdate}  to  {data.companyenddate}</p>
+                        <p>{data.companyaddress}</p>
+                        
                     </div>
                     <div>
-                        <p>company name</p>
-                        <p>degree</p>
+                        <p>{data.companyname}</p>
+                        <p>{data.position}</p>
+                        <p>{data.description}</p>
                     </div>
                 </div>
             </div>

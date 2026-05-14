@@ -58,7 +58,7 @@ body {
 .leftcontainer::-webkit-scrollbar-track { background: transparent; }
 .leftcontainer::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-/* ─── App Header (top of left panel) ────────────────────────── */
+/* ─── App Header ─────────────────────────────────────────────── */
 .app-header {
   padding: 28px 32px 20px;
   border-bottom: 1px solid var(--border);
@@ -106,16 +106,32 @@ body {
 .form-section {
   padding: 28px 32px 24px;
   border-bottom: 1px solid var(--border);
-  transition: background 0.15s;
+  transition: padding 0.25s ease, background 0.15s;
 }
 
 .form-section:last-child { border-bottom: none; }
 
+/* ── Collapsed state ── */
+.form-section--collapsed {
+  padding: 16px 32px;
+  background: var(--white);
+}
+
+.form-section--collapsed .section-fields {
+  display: none;
+}
+
+/* ─── Section Header ─────────────────────────────────────────── */
 .section-header {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 22px;
+}
+
+/* Remove bottom margin when collapsed — no fields below */
+.form-section--collapsed .section-header {
+  margin-bottom: 0;
 }
 
 .section-icon {
@@ -145,6 +161,30 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-secondary);
+  flex: 1;
+}
+
+/* ─── Edit Button ────────────────────────────────────────────── */
+.btn-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: transparent;
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.btn-edit:hover {
+  background: var(--accent);
+  color: white;
 }
 
 /* ─── Form Fields ────────────────────────────────────────────── */
@@ -293,11 +333,6 @@ body {
   margin-bottom: 4px;
 }
 
-.cv-name:empty::after {
-  content: 'Your Name';
-  color: var(--border);
-}
-
 .cv-contact-row {
   display: flex;
   flex-wrap: wrap;
@@ -325,8 +360,6 @@ body {
   flex-shrink: 0;
 }
 
-.cv-contact-item:empty { display: none; }
-
 /* CV Body */
 .cv-body {
   padding: 36px 52px 52px;
@@ -336,8 +369,6 @@ body {
 }
 
 /* CV Section */
-.cv-section {}
-
 .cv-section-title {
   font-size: 10px;
   font-weight: 600;
@@ -357,6 +388,13 @@ body {
   background: var(--border);
 }
 
+/* CV Summary */
+.cv-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
 /* CV Entry */
 .cv-entry {
   display: grid;
@@ -365,8 +403,6 @@ body {
   align-items: start;
 }
 
-.cv-entry-main {}
-
 .cv-entry-name {
   font-family: 'Playfair Display', serif;
   font-size: 15.5px;
@@ -374,8 +410,6 @@ body {
   color: var(--text-primary);
   line-height: 1.3;
 }
-
-.cv-entry-name:empty { display: none; }
 
 .cv-entry-sub {
   font-size: 13px;
@@ -408,8 +442,6 @@ body {
   margin-bottom: 2px;
 }
 
-.cv-entry-date:empty { display: none; }
-
 .cv-entry-location {
   font-size: 11px;
   color: var(--text-muted);
@@ -417,7 +449,7 @@ body {
 
 .cv-entry-location:empty { display: none; }
 
-/* Placeholder shimmer for empty document */
+/* Placeholder shimmer */
 .cv-placeholder {
   display: flex;
   flex-direction: column;

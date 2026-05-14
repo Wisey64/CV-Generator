@@ -42,6 +42,14 @@ function Cv({ data }) {
       {/* ── Body ───────────────────────────────────────── */}
       <div className="cv-body">
 
+        {/* Summary */}
+        {data.summary && (
+          <div className="cv-section">
+            <div className="cv-section-title">Profile</div>
+            <p className="cv-summary">{data.summary}</p>
+          </div>
+        )}
+
         {/* Education */}
         {hasEducation && (
           <div className="cv-section">

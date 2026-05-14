@@ -7,7 +7,7 @@ import Cv from './components/cv'
 
 function App() {
   const [data, setData] = useState({
-    name: "", email: "", phone: [], address: "",
+    name: "", email: "", phone: [], address: "", summary: "",
     schoolname: "", degree: "", schoolstartdate: "", schoolenddate: "", schooladdress: "",
     companyname: "", position: "", companystartdate: "", companyenddate: "",
     companyaddress: "", description: ""
@@ -32,7 +32,6 @@ function App() {
                 <polyline points="14 2 14 8 20 8" fill="none" stroke="white" strokeWidth="1.5"/>
                 <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="1.5"/>
                 <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="1.5"/>
-                <polyline points="10 9 9 9 8 9" stroke="white" strokeWidth="1.5" fill="none"/>
               </svg>
             </div>
             <div>
